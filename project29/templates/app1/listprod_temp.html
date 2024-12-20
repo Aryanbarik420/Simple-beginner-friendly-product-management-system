@@ -1,0 +1,25 @@
+{%extends "app1/index.html"%}
+{%block content%}
+
+    <table border="2" width="100%">
+        <tr>
+            <th>ProductId</th>
+            <th>ProductName</th>
+            <th>Qty</th>
+            <th>Price</th>
+        </tr>
+
+
+        {%for i in data%}
+        <tr>
+            <td>{{i.prodid}}</td>
+            <td>{{i.prodname}}</td>
+            <td>{{i.qty}}</td>
+            <td>{{i.price}}</td>
+            <td><a  class="btn btn-warning" href="/prodedit_view/{{i.prodid}}" role="button"></a>Edit</td>
+            <td><a class="btn btn-danger" href="/proddelete_view/{{i.prodid}}"  role="button"></a>Delete</td>
+        </tr>
+        {%endfor%}
+    </table>
+    
+{%endblock%}
